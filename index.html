@@ -8,9 +8,9 @@
         body {
             background-color: #ffd1dc; /* Soft pink */
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .container {
             max-width: 600px;
@@ -34,17 +34,94 @@
             color: #333;
             font-size: 16px;
         }
+
+        /* The Side Menu */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #ed8ea4;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-menu a:hover {
+            color: #ffd1dc;
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            font-size: 30px;
+            color: #ed8ea4;
+            cursor: pointer;
+            padding: 15px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Side Menu Button -->
+    <span class="menu-icon" onclick="openMenu()">&#9776; </span>
+
+    <!-- The Side Menu -->
+    <div id="mySideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
-    <img src="headshot.JPEG" alt="Sophia's Photo">
-    <h1>Sophia Maldonado</h1>
-    <p>Hi!</p>
-    <p>I'm a Chicago native who loves hiking, hammocking, and learning new things. Whether I’m out exploring or just hanging with friends, I’m always looking for new experiences and perspectives.</p>
-    <p>I'm a soon-to-be graduate of Saint Benedict and Saint John’s University with a degree in Computer Science. I love, <em>love</em> bringing ideas to life, whether it’s through 3D printing, digital design, robotics, bracelet making, baking, or cooking. If it’s hands-on and gets my creative juices flowing, I’m all in!</p>
-    <p>This space is where I share my interests, work, and whatever inspires me :) </p>
-</div>
+        <img src="headshot.JPEG" alt="Sophia's Photo">
+        <h1>Sophia Maldonado</h1>
+        <p>Hi!</p>
+        <p>I'm a Chicago native who loves hiking, hammocking, and learning new things. Whether I’m out exploring or just hanging with friends, I’m always looking for new experiences and perspectives.</p>
+        <p>I'm a soon-to-be graduate of Saint Benedict and Saint John’s University with a degree in Computer Science. I love, <em>love</em> bringing ideas to life, whether it’s through 3D printing, digital design, robotics, bracelet making, baking, or cooking. If it’s hands-on and gets my creative juices flowing, I’m all in!</p>
+        <p>This space is where I share my interests, work, and whatever inspires me :)</p>
+    </div>
+
+    <script>
+        // Open the side menu
+        function openMenu() {
+            document.getElementById("mySideMenu").style.width = "250px";
+        }
+
+        // Close the side menu
+        function closeMenu() {
+            document.getElementById("mySideMenu").style.width = "0";
+        }
+        function goContact() {
+            <a href="contact.html">Contact</a>
+
+        }
+        
+    </script>
 
 </body>
 </html>
