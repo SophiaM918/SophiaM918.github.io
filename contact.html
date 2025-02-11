@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Sophia Maldonado</title>
+    <title>Let's get in touch! </title>
     <style>
         body {
             background-color: #ffd1dc; /* Soft pink */
@@ -12,6 +12,54 @@
             padding: 0;
             overflow-x: hidden;
         }
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #ed8ea4;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-menu a:hover {
+            color: #ffd1dc;
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            font-size: 30px;
+            color: #ed8ea4;
+            cursor: pointer;
+            padding: 15px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        /* Container */
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -52,8 +100,20 @@
 </head>
 <body>
 
+    <!-- Side Menu Button -->
+    <span class="menu-icon" onclick="openMenu()">&#9776;</span>
+
+    <!-- The Side Menu -->
+    <div id="mySideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="index.html">Home</a> <!-- Directly link to index.html -->
+        <a href="portfolio.html">My Work</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
-        <h1>Contact Sophia Maldonado</h1>
+        <h1>Let's Get In Touch!</h1>
         
         <div class="social-links">
             <!-- Email Logo Section -->
@@ -65,7 +125,7 @@
             <!-- LinkedIn Logo Section -->
             <div>
                 <img src="linkedin-logo.png" alt="LinkedIn Logo">
-                <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/sophiamaldonado" target="_blank">LinkedIn</a>
             </div>
 
             <!-- Phone Logo Section -->
@@ -75,6 +135,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Open the side menu
+        function openMenu() {
+            document.getElementById("mySideMenu").style.width = "250px";
+        }
+
+        // Close the side menu
+        function closeMenu() {
+            document.getElementById("mySideMenu").style.width = "0";
+        }
+    </script>
 
 </body>
 </html>
